@@ -136,19 +136,47 @@ function incrementCorrectCount() {
   
   /*function replay() {
     // Logic to replay the level goes here
-    location.href = "https://rudhraa-r.github.io/Pandi_Aatam-Lvl-1/";;
+    location.href = "https://rudhraa-r.github.io/Hopscotch1/";;
   }*/
   
   function nextLevel() {
     // Logic to proceed to the next level goes here
-    location.href="index2.html"
+    location.href="index3.html"
 
   }
   
- /* function exit() {
+  /*function exit() {
     // Logic to exit the game or go back to the main menu goes here
     window.open="main.html";
   }*/
+const draggableContainer = document.querySelector('.draggable-elements');
+const shuffleButton = document.createElement('button');
+shuffleButton.classList.add('shuffle-button');
+shuffleButton.textContent = 'Play Now';
+shuffleButton.addEventListener('click', shuffleDraggableElements);
+document.body.insertBefore(shuffleButton, draggableContainer);
+setTimeout(() => {
+  shuffleButton.classList.add('show');
+}, 100);
+
+function shuffleDraggableElements() {
+  const draggableElements = Array.from(draggableContainer.querySelectorAll('.draggable'));
+  draggableElements.forEach(element => {
+    draggableContainer.removeChild(element);
+  });
+  shuffleArray(draggableElements);
+  draggableElements.forEach(element => {
+    draggableContainer.appendChild(element);
+  });
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
   
   
   
