@@ -141,7 +141,7 @@ function incrementCorrectCount() {
   
   function nextLevel() {
     // Logic to proceed to the next level goes here
-    location.href="index2.html"
+    location.href="https://reethika0503.github.io/Level2.github.io/"
 
   }
   
